@@ -91,3 +91,22 @@ function changingElementBgColor(elementRef ,bgColor){
     elementRef.style.backgroundColor= bgColor
 }
 changingElementBgColor(mainHeading ,bgColorInput)
+
+
+
+/*
+Q6: Write a function that saves an object to localStorage. The function should take two arguments: the first argument is a string representing the key to use for storing the object, and the second argument is the object to store.
+*/
+
+
+// Q6 solution
+const mySelf = {
+    name: "Muhammad Umer",
+    age: 21,
+    city: "Karachi",
+    skillSet: ["MERN Stack", "ReactJS", "NextJS", "Google Certified UI/UX Designer", "Python Dev"]
+}
+function saveObjectToLocalStorage(objKey ,mySelfObj){
+    localStorage.setItem(objKey, JSON.stringify(mySelfObj))
+}
+saveObjectToLocalStorage("intro" ,mySelf)
