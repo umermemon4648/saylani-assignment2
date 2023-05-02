@@ -75,3 +75,19 @@ function addingNewList(newFruit){
     fruitList.appendChild(tag)
 }
 addingNewList("Mango")
+
+
+/*
+Q5: Write a function that changes the background color of an HTML element.
+The function should take two arguments: the first argument is a reference
+to the HTML element, and the second argument is a string representing
+the new background color.
+*/
+
+//Here is the Solution of Q5
+const mainHeading = document.querySelector('#main-heading') //reference of main heading defined at the top of html
+const bgColorInput = prompt("Enter Any color") //taking color name as input
+function changingElementBgColor(elementRef ,bgColor){
+    elementRef.style.backgroundColor= bgColor
+}
+changingElementBgColor(mainHeading ,bgColorInput)
