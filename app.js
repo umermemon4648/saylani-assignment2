@@ -110,3 +110,16 @@ function saveObjectToLocalStorage(objKey ,mySelfObj){
     localStorage.setItem(objKey, JSON.stringify(mySelfObj))
 }
 saveObjectToLocalStorage("intro" ,mySelf)
+
+
+/*
+Q7: Write a function that retrieves an object from localStorage. The function should take one argument, which is a string representing the key used to store the object. The function should return the object.
+*/
+
+
+// Q7 solution
+function retrieveObjectFromLocalStorage(objKey){
+    let retrievalData = JSON.parse(localStorage.getItem(objKey))
+    console.log(retrievalData)
+}
+retrieveObjectFromLocalStorage("intro")
