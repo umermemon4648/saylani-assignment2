@@ -123,3 +123,46 @@ function retrieveObjectFromLocalStorage(objKey){
     console.log(retrievalData)
 }
 retrieveObjectFromLocalStorage("intro")
+
+
+/*
+Q8: Write a function that takes an object and saves each property to localStorage using the property name as the key and the property value as the value. The function should also retrieve the object from localStorage and return it as a new object.
+*/
+
+
+// Q8 Solution
+function saving_retrievalObject(myObj){
+    // saving each property to localStorage
+    for(let propName in myObj){
+        localStorage.setItem(propName, JSON.stringify(myObj[propName]))
+    }
+
+     // Retrieve the object from localStorage and return it as a new object
+  let newObj = {};
+
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i)
+    newObj[key] = JSON.parse(localStorage.getItem(key))
+    
+  }
+  return newObj
+}
+
+let myObj = {
+    make: "Toyota",
+    model: "Fortuner 4x4 Legender",
+    year: 2022,
+    color: "white",
+    engine: {
+      cylinders: 4,
+      displacement: 2800,
+      horsepower: 204
+    },
+    features: ["360-degree camera", "LED headlights", "heated seats", "4x4 drive system"]
+  };
+  
+  // Save the object to localStorage
+  let savedObj = saving_retrievalObject(myObj);
+  
+  console.log(savedObj)
+  
